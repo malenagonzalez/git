@@ -70,16 +70,22 @@
         const resultado = {
             cantPreciosCeroyQuinientos: 0,
             cantPreciosQuinientosUnoyMil: 0,
-            cantPreciosSuperioresAMil: 0
+            cantPreciosSuperioresAMil: 0,
+            totalPreciosCeroyQuinientos: 0,
+            totalPreciosQuinientosUnoyMil: 0,
+            totalPreciosSuperioresAMil: 0
         }
 
         for (let index = 0; index < precios.length; index++) {
             if (precios[index] >= 0 && precios[index] <= 500) {
                 resultado.cantPreciosCeroyQuinientos++;
+                resultado.totalPreciosCeroyQuinientos += precios[index];
             } else if (precios[index] >= 501 && precios[index] <= 1000) {
                 resultado.cantPreciosQuinientosUnoyMil++;
+                resultado.totalPreciosQuinientosUnoyMil += precios[index];
             } else {
                 resultado.cantPreciosSuperioresAMil++;
+                resultado.totalPreciosSuperioresAMil += precios[index];
             }
         }
 
