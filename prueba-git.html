@@ -1,3 +1,91 @@
-<div>
-    texto1
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const cliente = {
+            id: 2,
+            nombre: "Malena"
+        }
+        console.log(cliente);
+        console.log(cliente.id);
+        console.log(cliente.nombre);
+        console.log(cliente["id"]);
+        console.log(cliente["nombre"]);
+
+        cliente.apellido = "Gonzalez";
+
+        console.log(cliente.apellido);
+
+        cliente.alias = "Male"
+
+        console.log(cliente.alias);
+
+        delete cliente.alias;
+
+        console.log(cliente);
+
+        const numeros = [1, 2, 3, 4, 5];
+
+        for (let index = 0; index < numeros.length; index++) {
+            console.log(numeros[index]);
+
+        }
+        console.log(numeros);
+
+        const lista = [3, 6, -4, 8, 10, -15, 30, 0, -12, 20];
+
+        const resultados = {
+            cantPositivos: 0,
+            cantNegativos: 0,
+            totalPositivos: 0,
+            totalNegativos: 0,
+            totalNumerosMayoresAOcho: 0
+        }
+
+        for (let index = 0; index < lista.length; index++) {
+            if (lista[index] > 0) {
+                resultados.cantPositivos++;
+                resultados.totalPositivos += lista[index];
+                if (lista[index] > 8) {
+                    resultados.totalNumerosMayoresAOcho += lista[index];
+                }
+            } else if (lista[index] < 0) {
+                resultados.cantNegativos++;
+                resultados.totalNegativos += lista[index];
+            }
+        }
+
+        console.log(resultados);
+
+        const precios = [500, 600, 350, 1000, 200];
+
+        const resultado = {
+            cantPreciosCeroyQuinientos: 0,
+            cantPreciosQuinientosUnoyMil: 0,
+            cantPreciosSuperioresAMil: 0
+        }
+
+        for (let index = 0; index < precios.length; index++) {
+            if (precios[index] >= 0 && precios[index] <= 500) {
+                resultado.cantPreciosCeroyQuinientos++;
+            } else if (precios[index] >= 501 && precios[index] <= 1000) {
+                resultado.cantPreciosQuinientosUnoyMil++;
+            } else {
+                resultado.cantPreciosSuperioresAMil++;
+            }
+        }
+
+        console.log(resultado);
+
+    </script>
+</body>
+
+</html>
